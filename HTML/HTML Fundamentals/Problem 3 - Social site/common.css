@@ -1,0 +1,28 @@
+body {
+	background-color: SkyBlue;
+}
+
+h2 {
+	border-bottom: 1px solid silver;
+	border-top: 1px solid silver;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+img {
+	width: 15%;
+	height: auto;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.friends {
+	padding-left: 0;
+	list-style-type: none;
+	font-style: italic;
+}
+
+.friends li li {
+	padding: 5px;
+	list-style-type: none;
+	font-style: normal;
+}
