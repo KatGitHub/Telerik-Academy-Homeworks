@@ -1,0 +1,12 @@
+form input {
+	margin: 10px;
+}
+
+form :last-child {
+	width: 120px;
+}
+
+form span {
+	font-weight: bold;
+	font-size: 11px;
+}

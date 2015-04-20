@@ -1,0 +1,12 @@
+#simple-table {
+	width: 40%;
+}
+
+#simple-table th {
+	font-size: 24px;
+}
+
+#table-with-borders td {
+	border: 2px inset silver;
+	text-align: center;
+}
