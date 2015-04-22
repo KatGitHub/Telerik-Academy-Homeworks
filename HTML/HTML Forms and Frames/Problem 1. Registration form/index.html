@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Registration form</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+</head>
+<body>
+<form>
+<table>
+	<tbody>
+		<tr>
+			<td><label for="ln">Last Name</label></td>
+			<td><input type="text" name="lastname" id="ln"></td>
+		</tr>
+		<tr>
+			<td><label for="fn">First Name</label></td>
+			<td><input type="text" name="firstname" id="fn"></td>
+		</tr>
+		<tr>
+			<td><label for="address">Address</label></td>
+			<td><textarea name="address" id="address"></textarea></td>
+		</tr>
+		<tr>
+			<td><label for="city">City</label></td>
+			<td>
+				<input type="text" name="city" id="city">
+				<label for="state">State</label>
+				<input type="text" name="state" id="state">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="code">Zip/Postal Code</label></td>
+			<td>
+				<input type="text" name="code" id="code">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="country">Country</label></td>
+			<td>
+				<select name="country" id="country">
+					<option value="1">Bulgaria</option>
+					<option value="2">Serbia</option>
+					<option value="3">Romania</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="phone">Phone(country code, area code, number)</label></td>
+			<td>
+				(+<input type="text" name="countrycode" id="phone">)
+				<input type="text" name="areacode">
+				<input type="text" name="number">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="email">Email</label></td>
+			<td>
+				<input type="email" name="email" id="email">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="date">Birth date</label></td>
+			<td>
+				<input type="date" name="birthdate" id="date">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="gender">Gender</label></td>
+			<td>
+				<select name="gender" id="gender">
+					<option value="1">Male</option>
+					<option value="2">Female</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Starting date</td>
+			<td>
+				<input type="radio" name="date" value="spring" checked>Spring 2015
+				<input type="radio" name="date" value="summer">Summer 2015
+			</td>
+		</tr>
+		<tr>
+			<td><label for="comments">Comments/Questions</label></td>
+			<td>
+				<textarea name="comments" id="comments" rows="10" cols="30" placeholder="Enter your message here.."></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Submit">
+				<input type="reset" value="Clean this form">
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</body>
+</html>

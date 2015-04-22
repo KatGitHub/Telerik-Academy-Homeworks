@@ -1,0 +1,21 @@
+table {
+	border-collapse: collapse;
+}
+
+table td, th {
+	border: 2px inset silver;
+	padding: 5px;
+}
+
+
+tr :last-child {
+	font-weight: bold;
+}
+
+tbody :nth-child(11) td, tbody :nth-child(11) td :first-child {
+	font-weight: normal;
+}
+
+form {
+	display: inline;
+}

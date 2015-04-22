@@ -1,0 +1,29 @@
+#outer-table {
+	border-spacing: 0;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+
+td, th {
+	padding: 5px;
+}
+
+#outer-table th {
+	border-bottom: 2px solid gray;
+}
+
+#inner-table {
+	border: 2px solid gray;
+	padding: 10px;
+}
+
+th a {
+	font-size: 22px;
+	color: DeepSkyBlue;
+	margin: 4px;
+}
+
+img {
+	width: 150px;
+}
+

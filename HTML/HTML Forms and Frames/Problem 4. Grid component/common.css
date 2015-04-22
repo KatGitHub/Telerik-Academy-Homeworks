@@ -1,0 +1,66 @@
+table {
+	border-spacing: 0;
+	border: 1px solid rgb(208, 215, 229);
+	border-radius: 5px;
+}
+
+table td, th {
+	border-bottom: 1px solid rgb(208, 215, 229);
+	border-left: 1px solid rgb(208, 215, 229);
+	padding: 5px;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: left;
+	font-weight: normal;
+}
+
+tfoot td {
+	border-bottom: none;
+}
+
+tbody tr > :first-child, 
+thead tr > :first-child,
+tfoot td {
+	border-left: none;
+	width: 80px;
+}
+
+thead, tfoot {
+	background-color: rgb(223,227,232);
+}
+
+tfoot button, tfoot a, tfoot form, tfoot div, thead input {
+	position: relative;
+	float: left;
+	margin: 3px;
+}
+
+tfoot div {
+	float: right;
+}
+
+tfoot a {
+	text-decoration: none;
+	color: black;
+}
+
+thead > tr {
+	background: linear-gradient(to bottom, rgb(240, 241, 242), rgb(219, 222, 225));
+}
+
+tfoot {
+	background: linear-gradient(to bottom, rgb(224, 228, 232), rgb(186, 191, 196));
+}
+
+#productid {
+	width: 30%;
+}
+
+#unitprice, #unitsstock {
+	width: 70%;
+}
+
+button img {
+	width: 15px;
+	height: auto;
+} 
