@@ -1,0 +1,70 @@
+/*I chose to use only pseudo selectors
+instead of classes and id-s
+just to have some practice with 
+first ones
+because they seem to be harder to me*/
+
+body, table, tr, td, th, div, a {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	width: 333px;
+	background-color: rgb(89,89,89);
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: rgb(192,184,177);
+	padding-bottom: 3px;
+}
+
+td, th {
+	padding-top: 9px;
+	padding-bottom: 3px;
+	text-align: left;
+}
+
+th {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+}
+
+tr td:first-child {
+	font-style: italic;
+	color: rgb(232,232,232);
+	width: 110px;
+}
+
+tr:last-of-type td:last-child {
+	color: rgb(234,117,0);
+	font-weight: bold;
+}
+
+tr:nth-child(7) a,
+tr:nth-child(3) td:first-child {
+	padding-left: 110px;
+	text-decoration: none;
+	font-style: normal;
+}
+
+tr:nth-child(3) td:first-child {
+	color: red;
+	font-weight: bold;
+	padding-top: 0;
+}
+
+tr:nth-child(2) td:last-child,
+tr:nth-child(4) td:last-child,
+tr:nth-child(7) a {
+	color: rgb(239,229,163);
+}
+
+div {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgb(112,179,121);
+	display: inline-block;
+	margin-right: 3px;
+}
