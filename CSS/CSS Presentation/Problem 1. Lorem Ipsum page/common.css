@@ -1,0 +1,15 @@
+body {
+	font-size: 18px;
+	font-family: Consolas, sans-serif;
+	color: #0094ff;
+}
+
+@font-face {
+    font-family: Edwardian Script ITC;
+    src: url(edwardian-script-itc-1361504162.ttf);
+}
+
+p:first-letter {
+	font-family: Edwardian Script ITC;
+	font-size: 52px;
+}

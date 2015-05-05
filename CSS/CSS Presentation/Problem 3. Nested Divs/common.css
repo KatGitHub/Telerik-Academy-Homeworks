@@ -1,0 +1,10 @@
+body > div {
+	width: 2000px;
+}
+
+div div {
+    width: 97%;
+    background-color: black;
+    border: 1px solid red;
+    border-radius: 60px;
+}

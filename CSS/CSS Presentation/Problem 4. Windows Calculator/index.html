@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problem 4. Windows Calculator</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+</head>
+<body>
+	<div id="main-container">
+		<div id="icon-container"></div>
+		<header><h1>Calculator</h1></header>
+		<div id="window-control">
+			<button></button>
+			<button disabled></button>
+			<button></button>
+		</div>
+		<div id="inner-container">
+			<div id="menu-bar">
+				<ul>
+					<li>View</li>
+					<li>Edit</li>
+					<li>Help</li>
+				</ul>
+			</div>
+			<div id="input-field">
+				<form>
+					<input type="text" name="text" value="8854455" class="shadow">
+				</form>
+			</div>
+			<div id="bits-view" class="shadow">
+				<ul>
+                	<li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li>
+            	</ul>
+	            <ul>
+	                <li>63</li><li>47</li><li>32</li>
+	            </ul>
+	            <ul>
+	                <li>0000</li><li>0000</li><li>1000</li><li>0111</li><li>0001</li><li>1011</li><li>1011</li><li>0111</li>
+	            </ul>
+	            <ul>
+	                <li>31</li><li>15</li><li>0</li>
+	            </ul>
+			</div>
+			<div id="radio-btns">
+				<div id="number-format">
+					<form>
+				    <input type="radio" name="format" value="hex" id="hex"><label for="hex">Hex</label><br>
+				    <input type="radio" name="format" value="dec" id="dec" checked><label for="dec">Dec</label><br>
+				    <input type="radio" name="format" value="oct" id="oct"><label for="oct">Oct</label><br>
+				    <input type="radio" name="format" value="bin" id="bin"><label for="bin">Bin</label>
+				    </form>
+				</div>
+				<div id="data-type">
+					<form>
+				    <input type="radio" name="type" value="qword" id="qword" checked><label for="qword">Qword</label><br>
+				    <input type="radio" name="type" value="dword" id="dword"><label for="dword">Dword</label><br>
+				    <input type="radio" name="type" value="word" id="word"><label for="word">Word</label><br>
+				    <input type="radio" name="type" value="byte" id="byte"><label for="byte">Byte</label>
+				    </form>
+				</div>
+			</div>
+			<div id="buttons">
+				<div>
+                    <button disabled>&nbsp;</button>
+                    <button>Mod</button>
+                    <button class="letter" disabled>A</button>
+                    <button class="shadow" disabled>MC</button>
+                    <button class="shadow" disabled>MR</button>
+                    <button class="shadow" disabled>MS</button>
+                    <button class="shadow" disabled>M+</button>
+                    <button class="shadow" disabled>M-</button>
+                </div>
+                <div>
+                    <button>(</button>
+                    <button>)</button>
+                    <button class="letter" disabled>B</button>
+                    <button class="bold">←</button>
+                    <button>CE</button>
+                    <button>C</button>
+                    <button>±</button>
+                    <button disabled>√</button>
+                </div>
+                <div>
+                    <button>RoL</button>
+                    <button>RoR</button>
+                    <button class="letter" disabled>C</button>
+                    <button class="number shadow">7</button>
+                    <button class="number shadow">8</button>
+                    <button class="number shadow">9</button>
+                    <button>/</button>
+                    <button disabled>%</button>
+                </div>
+                <div>
+                    <button>Or</button>
+                    <button>Xor</button>
+                    <button class="letter" disabled>D</button>
+                    <button class="number shadow">4</button>
+                    <button class="number shadow">5</button>
+                    <button class="number shadow">6</button>
+                    <button class="bold">*</button>
+                    <button disabled>1/<span class="italic">x</span></button>
+                </div>
+                <div>
+                    <button class="span1 btn">Lsh</button>
+                    <button class="span1 btn">Rsh</button>
+                    <button class="letter" disabled>E</button>
+                    <button class="number shadow">1</button>
+                    <button class="number shadow">2</button>
+                    <button class="number shadow">3</button>
+                    <button class="bold">-</button>
+                    <button class="long bold absolute">=</button>
+                </div>
+                <div>
+                    <button>Not</button>
+                    <button>And</button>
+                    <button class="letter" disabled>F</button>
+                    <button class="wide number">0</button>
+                    <button class="bold" disabled>.</button>
+                    <button class="bold">+</button>
+                </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
