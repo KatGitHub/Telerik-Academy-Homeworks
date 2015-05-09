@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#main-container {
+	background-color: #3B3B3B;
+	width: 664px;
+	margin: 20px;
+	padding: 10px;
+	color: white;
+	border-radius: 10px;
+}
+
+#user-login {
+	height: 67px;
+	border-bottom: 1px solid #262626;
+	-webkit-box-shadow: inset 0px -54px 92px -53px rgba(38,38,38,1);
+	-moz-box-shadow: inset 0px -54px 92px -53px rgba(38,38,38,1);
+	box-shadow: inset 0px -54px 92px -53px rgba(38,38,38,1);
+}
+
+#user-login div {
+	width: 52px;
+	height: 52px;
+	background-image: url(images/bg1.png);
+}
+
+#user-login div, #login, input {
+	float: left;
+}
+
+form {
+	font-size: 22px;
+	font-weight: bold;
+	overflow: auto;
+}
+
+#login {
+	margin: 10px 20px 0px 10px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 139px;
+	margin: 12px 25px 0px 0px;
+	padding: 2px 0px 2px 10px;
+}
+
+input[type="image"] {
+	margin-left: 12px;
+}
+
+h1 {
+	color: #FCD91D;
+	font-weight: normal;
+	margin: 20px 0;
+}
+
+p {
+	color: #969696;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+p a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p span {
+	color: white;
+}
+
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: black;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black;  
+}
+
+:-ms-input-placeholder {  
+   color: black;  
+}
