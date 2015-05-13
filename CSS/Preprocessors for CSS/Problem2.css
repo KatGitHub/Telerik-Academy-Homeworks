@@ -1,0 +1,67 @@
+#content {
+  margin: 10px;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin-right: 10px;
+  width: 150px;
+  height: 150px;
+  float: left;
+  background-size: cover;
+  background-position: center;
+}
+li:first-child {
+  background-image: url("images/pic1.jpg");
+}
+li:first-child:hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic1.jpg");
+}
+li:nth-child(2) {
+  background-image: url("images/pic3.jpg");
+}
+li:nth-child(2):hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic3.jpg");
+}
+li:nth-child(3) {
+  background-image: url("images/pic4.jpg");
+}
+li:nth-child(3):hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic4.jpg");
+}
+li:nth-child(4) {
+  background-image: url("images/pic5.jpg");
+}
+li:nth-child(4):hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic5.jpg");
+}
+li:nth-child(5) {
+  background-image: url("images/pic2.jpg");
+}
+li:nth-child(5):hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic2.jpg");
+}
+li:nth-child(6) {
+  background-image: url("images/pic6.jpg");
+}
+li:nth-child(6):hover ~ #zoom {
+  display: block;
+  background-image: url("images/pic6.jpg");
+}
+#clearfix {
+  height: 0;
+  width: 100%;
+  clear: both;
+}
+#zoom {
+  display: none;
+  margin-top: 10px;
+  width: 300px;
+  height: 300px;
+}

@@ -1,0 +1,201 @@
+fontColor = white
+fontStyle = 14px normal Arial
+margin = 5px
+padding = 5px
+inputBgColor = #b35ef3
+buttonHoverColor = #8949b9
+gradient()
+  background -moz-linear-gradient(top,  #ddecfb 0%, #cce0eb 0%, #c3a0ec 0%, #d791ff 1%, #d292fd 1%, #c58af2 6%, #a439f4 15%, #8f1aef 21%, #9215f2 25%, #9215f2 100%) /* FF3.6+ */
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddecfb), color-stop(0%,#cce0eb), color-stop(0%,#c3a0ec), color-stop(1%,#d791ff), color-stop(1%,#d292fd), color-stop(6%,#c58af2), color-stop(15%,#a439f4), color-stop(21%,#8f1aef), color-stop(25%,#9215f2), color-stop(100%,#9215f2)) /* Chrome,Safari4+ */
+  background -webkit-linear-gradient(top,  #ddecfb 0%,#cce0eb 0%,#c3a0ec 0%,#d791ff 1%,#d292fd 1%,#c58af2 6%,#a439f4 15%,#8f1aef 21%,#9215f2 25%,#9215f2 100%); /* Chrome10+,Safari5.1+ */
+  background -o-linear-gradient(top,  #ddecfb 0%,#cce0eb 0%,#c3a0ec 0%,#d791ff 1%,#d292fd 1%,#c58af2 6%,#a439f4 15%,#8f1aef 21%,#9215f2 25%,#9215f2 100%); /* Opera 11.10+ */
+  background -ms-linear-gradient(top,  #ddecfb 0%,#cce0eb 0%,#c3a0ec 0%,#d791ff 1%,#d292fd 1%,#c58af2 6%,#a439f4 15%,#8f1aef 21%,#9215f2 25%,#9215f2 100%); /* IE10+ */
+  background linear-gradient(to bottom,  #ddecfb 0%,#cce0eb 0%,#c3a0ec 0%,#d791ff 1%,#d292fd 1%,#c58af2 6%,#a439f4 15%,#8f1aef 21%,#9215f2 25%,#9215f2 100%); /* W3C */
+clear-fix()
+  zoom 1
+  &:after
+		&:before
+    content "\0020"
+    display block
+    height 0
+    overflow hidden
+  &:after
+  	clear: both;
+border(color)
+	border 2px solid color
+	
+.clearfix
+	clear-fix()
+
+body, header, 
+section, footer, 
+article, h1, h2,
+input, button, label,
+p, fieldset, nav,
+ul, li, a, span, strong, em 
+	margin 0
+	padding 0
+	border 0
+
+div, h1, h3, header, footer,
+body, section, nav, article, 
+aside
+	display block
+
+body 
+	font fontStyle
+	color fontColor
+	gradient()
+header
+  padding 25px 15px 5px 15px
+div#logo-container
+  position relative
+  float left
+div#reg-form-container
+  right 5%
+  top 50%
+  position relative
+  float right
+  div
+  	text-align right
+  	label
+  		width 50px
+  		margin margin
+		input
+      padding 2px 5px
+      margin margin
+      width 130px
+      border(#603382)
+      background-color inputBgColor
+      border-radius 10px
+  button
+  	margin-left auto
+  	margin-right auto
+  	font-weight bold
+  	border(#9a62c4)
+  	border-style outset
+  	border-radius 10px
+  	padding 5px 8px
+  	background-color inputBgColor
+  	color fontColor
+  	&:hover
+  		background-color buttonHoverColor
+  		border-style inset
+nav
+	display inline-block
+	width 75%
+	margin margin*4
+	padding 12px
+	border(#000)
+	border-radius 15px
+	@extend .clearfix
+	ul
+		@extend .clearfix
+		li
+			float left
+			margin 0
+			&:hover > a
+				text-decoration underline
+				color #a8a8a8
+			&:hover > a + ul
+				display block 
+			ul.sub-nav-list
+				@extend .clearfix
+				position absolute
+				display none
+				background-color rgba(179, 94, 243, 0.9)
+				border-radius 5px
+			a
+				text-decoration none
+				padding 0 10px
+				color fontColor
+				font 1.4em normal Arial
+				&.selected
+					font-weight bold
+			ul li
+				float none
+				margin 0 15px
+				padding 10px 0
+				border-bottom 1px solid black
+				&:last-of-type
+					border-bottom none
+				> a
+					font-size 1.2 em
+					color fontColor
+ul.nav-list
+	list-style-type none
+div#header-container
+	@extend .clearfix
+section
+	width 75%
+	float left
+	@extend .clearfix
+article
+	margin margin*4
+	padding padding*4
+	border(black)
+	border-radius 15px
+	header
+		background none
+		padding padding
+		h1
+			font-size 1.4em
+			padding 0
+	footer
+		padding padding
+		p
+			font-size 16px
+			text-align right
+			font-weight normal
+			time
+				font-family Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace
+			a
+				text-decoration none
+				color fontColor
+				opacity 0.6
+				&:hover
+					text-decoration underline
+aside
+	float left
+	width 20%
+	margin margin*4
+	@extend .clearfix
+	> ul
+		list-style-type none
+		> li
+			margin 15px 0
+			padding padding*3
+			border(black)
+			border-radius 5px
+			h2
+				font-size 1.1em
+				font-weight bold
+			p
+				margin 10px 5px
+				font-size 14px
+				a
+					color #aaaaaa
+					text-decoration none
+				strong
+					color #ccc
+					font-weight bold
+					font-style normal
+				em
+					color #ccc
+					font-weight normal
+					font-style italic
+			ul
+				list-style-type none
+				margin 10px 0
+				li
+					margin 5px 10px 0 0
+					background url(images/li-dot.png) no-repeat
+					background-position 0 50%
+					padding-left 25px
+footer
+	clear both
+	padding 15px 0 25px 0
+	text-align center
+	p
+		font-size 1.2em
+		font-weight bold

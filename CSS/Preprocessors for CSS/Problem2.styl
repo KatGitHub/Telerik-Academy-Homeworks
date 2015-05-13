@@ -1,0 +1,60 @@
+picture1 = url(images/pic1.jpg)
+picture2 = url(images/pic2.jpg)
+picture3 = url(images/pic3.jpg)
+picture4 = url(images/pic4.jpg)
+picture5 = url(images/pic5.jpg)
+picture6 = url(images/pic6.jpg)
+defaultSize = 150px
+zoomedSize = 300px
+clearfix()
+	height 0
+	width 100%
+	clear both
+#content
+	margin 10px
+ul
+	list-style none
+li
+	margin-right 10px
+	width defaultSize
+	height defaultSize
+	float left
+	background-size cover
+	background-position center
+	&:first-child
+		background-image picture1
+		&:hover ~ #zoom
+			display block
+			background-image picture1
+	&:nth-child(2)
+		background-image picture3
+		&:hover ~ #zoom
+			display block
+			background-image picture3
+	&:nth-child(3)
+		background-image picture4
+		&:hover ~ #zoom
+			display block
+			background-image picture4
+	&:nth-child(4)
+		background-image picture5
+		&:hover ~ #zoom
+			display block
+			background-image picture5
+	&:nth-child(5)
+		background-image picture2
+		&:hover ~ #zoom
+			display block
+			background-image picture2
+	&:nth-child(6)
+		background-image picture6
+		&:hover ~ #zoom
+			display block
+			background-image picture6
+#clearfix
+	clearfix()
+#zoom
+	display none
+	margin-top 10px
+	width zoomedSize
+	height zoomedSize
