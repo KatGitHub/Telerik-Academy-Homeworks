@@ -13,7 +13,7 @@ var k = false;
 var l = null; //Problem 4. Create null, undefined variables and try typeof on them.
 var m;
 
-var objects = [a, b, c, d, e, f, g, h, i, j, k, l, m, undef];
+var objects = [a, b, c, d, e, f, g, h, i, j, k, l, m];
 
 //Problem 3. Try typeof on all variables you created.
 for (var object in objects) {
