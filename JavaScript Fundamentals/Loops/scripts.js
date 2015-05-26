@@ -18,7 +18,7 @@ printNumbersNotDivisible(start, end);
 
 function printNumbersNotDivisible(start, end) {
     for (var i = start; i <= end; i += 1) {
-        if ((i % 3 !== 0) && (i % 7 !== 0)) {
+        if ((i % 3) && (i % 7)) {
             console.log(i);
         }
     }
