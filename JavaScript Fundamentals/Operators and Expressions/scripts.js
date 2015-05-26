@@ -1,54 +1,65 @@
 //Problem 1. Write an expression that checks if given integer is odd or even.
 
-function isEven(n) {
-    return (n % 2 === 0);
+function isOdd(n) {
+    if (isNaN(n)) {
+        return 'Not a number';
+    } else if (!!(n % 2)) {
+        return 'Odd';
+    } else {
+        return 'Even';
+    }
 }
 
 function solveProblem1() {
     var input = document.getElementById('input').value;
-    var output = 'odd';
-    if (isEven(input)) {
-        output = 'even';
-    }
+    var output = isOdd(input);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Problem 2. Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.
 
 function isDividedBy7and5(n) {
-    return (n % 35 === 0);
+    if (isNaN(n)) {
+        return 'Not a number';
+    } else if (!!(n % 35)) {
+        return 'cannot be divided by 7 and 5.';
+    } else {
+        return 'can be divided by 7 and 5.';
+    }
 }
 
 function solveProblem2() {
     var input = document.getElementById('input').value;
-    var output = 'can be divided by 7 and 5.';
-    if (!isDividedBy7and5(input)) {
-        output = 'cannot be divided by 7 and 5';
-    }
+    var output = isDividedBy7and5(input);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Problem 3. Write an expression that calculates rectangle’s area by given width and height.
 
 function calculateAreaRect(width, height) {
-    return (width * height);
+    if (isNaN(width) || isNaN(height)) {
+        return 'Not a number';
+    } else {
+        return (width * height);
+    }
 }
 
 function solveProblem3() {
     var input = document.getElementById('input').value.split(' ');
     var output = calculateAreaRect(input[0], input[1]);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 //Problem 4. Write an expression that checks for given integer if its third digit (right-to-left) is 7.
 
 function checkThirdDigit(n) {
-    if((((n / 100) | 0) % 10) === 7){
+    if (isNaN(n)) {
+        return 'Not a number';
+    } else if ((((n / 100) | 0) % 10) === 7) {
         return 'third digit is 7';
-    }
-    else{
+    } else {
         return 'third digit is not 7';
     }
 }
@@ -57,22 +68,26 @@ function solveProblem4() {
     var input = document.getElementById('input').value;
     var output = checkThirdDigit(input);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Problem 5. Write a boolean expression for finding the bit #3 (counting from 0) of a given integer.
 
 function checkBit(n, position) {
-    var nAndMask = n & (1 << position);
-    var bit = nAndMask >> position;
-    return bit;
+    if (isNaN(n) || isNaN(position)) {
+        return 'Not a number';
+    } else {
+        var nAndMask = n & (1 << position);
+        var bit = nAndMask >> position;
+        return bit;
+    }
 }
 
 function solveProblem5() {
     var input = document.getElementById('input').value;
     var output = checkBit(input, 3);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 /*
@@ -81,7 +96,11 @@ function solveProblem5() {
  */
 
 function checkPointInCircle(x, y, radius, circleX, circleY) {
-    return ((((x - circleX) * (x - circleX)) + ((y - circleY) * (y - circleY))) <= (radius * radius));
+    if (isNaN(y) || isNaN(x) || isNaN(radius) || isNaN(circleX) || isNaN(circleY)) {
+        return 'Not a number';
+    } else {
+        return ((((x - circleX) * (x - circleX)) + ((y - circleY) * (y - circleY))) <= (radius * radius));
+    }
 }
 
 function solveProblem6() {
@@ -89,23 +108,26 @@ function solveProblem6() {
     var radius = 5, circleX = 0, circleY = 0;
     var output = checkPointInCircle(input[0], input[1], radius, circleX, circleY);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Problem 7. Write an expression that checks if given positive integer number n (n ? 100) is prime.
 
 function checkIfPrimeNumber(n) {
-    if (n <= 1) {
-        return false;
-    }
-    else {
-        var sqrt = Math.sqrt(n);
-        for (var i = 2; i <= sqrt; i += 1) {
-            if (n % i === 0) {
-                return false;
+    if (isNaN(n)) {
+        return 'Not a number';
+    } else {
+        if (n <= 1) {
+            return false;
+        } else {
+            var sqrt = Math.sqrt(n);
+            for (var i = 2; i <= sqrt; i += 1) {
+                if (!(n % i)) {
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
     }
 }
 
@@ -113,20 +135,24 @@ function solveProblem7() {
     var input = document.getElementById('input').value;
     var output = checkIfPrimeNumber(input);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Problem 8. Write an expression that calculates trapezoid\'s area by given sides a and b and height h.
 
 function getTrapezoidArea(sideA, sideB, height) {
-    return ((sideA * 1 + sideB * 1) * height / 2);
+    if (isNaN(sideA) || isNaN(sideB) || isNaN(height)) {
+        return 'Not a number';
+    } else {
+        return ((sideA * 1 + sideB * 1) * height / 2);
+    }
 }
 
 function solveProblem8() {
     var input = document.getElementById('input').value.split(' ');
     var output = getTrapezoidArea(input[0], input[1], input[2]);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 /*
@@ -135,21 +161,25 @@ function solveProblem8() {
  */
 
 function checkPointOutsideRectangle(x, y) {
-    //Rectangle's top=1, right = 5, bottom = -1, left = -1.
-    return (((x > 5) || (x < -1)) || ((y > 1) || (y < -1)));
+    if (isNaN(x) || isNaN(y)) {
+        return 'Not a number';
+    } else {
+        //Rectangle's top=1, right = 5, bottom = -1, left = -1.
+        return (((x > 5) || (x < -1)) || ((y > 1) || (y < -1)));
+    }
 }
 
-function checkPointInCircleOutRect(x, y){
+function checkPointInCircleOutRect(x, y) {
     var radius = 3, circleX = 1, circleY = 1;
     return (checkPointInCircle(x, y, radius, circleX, circleY) &&
-            checkPointOutsideRectangle(x, y));
+    checkPointOutsideRectangle(x, y));
 }
 
 function solveProblem9() {
     var input = document.getElementById('input').value.split(' ');
     var output = checkPointInCircleOutRect(input[0], input[1]);
     document.getElementById('output').innerHTML = output;
-    return output;
+    console.log(output);
 }
 
 //Function for visualization of chosen problem in html page.
