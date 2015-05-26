@@ -3,11 +3,15 @@
 
 function exchangeIfGreater(a, b) {
     var temp = a;
-    if ((a * 1) > (b * 1)) {
-        a = b;
-        b = temp;
+    if (isNaN(a) || isNaN(b)) {
+        return 'Not a number';
+    } else {
+        if (+a > +b) {
+            a = b;
+            b = temp;
+        }
+        return (a + ' ' + b);
     }
-    return (a + ' ' + b);
 }
 
 function solveProblem1() {
@@ -21,16 +25,19 @@ function solveProblem1() {
 
 function getSignOfProduct(a, b, c) {
     var output = '+';
-    if (a === '0' || b === '0' || c === '0') {
-        return '0';
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        return 'Not a number';
+    } else {
+        if (!+a || !+b || !+c) {
+            return '0';
+        } else if (((a < 0) && (b < 0) && (c < 0)) ||
+            ((a < 0) && (b > 0) && (c > 0)) ||
+            ((a > 0) && (b < 0) && (c > 0)) ||
+            ((a > 0) && (b > 0) && (c < 0))) {
+            output = '-';
+        }
+        return output;
     }
-    else if (((a < 0) && (b < 0) && (c < 0)) ||
-        ((a < 0) && (b > 0) && (c > 0)) ||
-        ((a > 0) && (b < 0) && (c > 0)) ||
-        ((a > 0) && (b > 0) && (c < 0))) {
-        output = '-';
-    }
-    return output;
 }
 
 function solveProblem2() {
@@ -43,19 +50,23 @@ function solveProblem2() {
 //Problem 3. Write a script that finds the biggest of three numbers.
 
 function getBiggestOf3Num(a, b, c) {
-    var biggestN = a;
-    if ((b * 1) > (a * 1)) {
-        if ((b * 1) > (c * 1)) {
-            biggestN = b;
-        }
-        else {
+    var biggestN = +a;
+    b = +b;
+    c = +c;
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        return 'Not a number';
+    } else {
+        if (b > biggestN) {
+            if (b > c) {
+                biggestN = b;
+            } else {
+                biggestN = c;
+            }
+        } else if (c > a) {
             biggestN = c;
         }
+        return biggestN;
     }
-    else if ((c * 1) > (a * 1)) {
-        biggestN = c;
-    }
-    return biggestN;
 }
 
 function solveProblem3() {
@@ -69,33 +80,35 @@ function solveProblem3() {
 
 function sortInDescending(a, b, c) {
     var output = '';
-    if ((b * 1) > (a * 1)) {
-        if ((b * 1) > (c * 1)) {
-            output = b;
-            if (a * 1 > c * 1) {
-                output += ' ' + a + ' ' + c;
+    b = +b;
+    c = +c;
+    a = +a;
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        return 'Not a number';
+    } else {
+        if (b > a) {
+            if (b > c) {
+                output = b;
+                if (a > c) {
+                    output += ' ' + a + ' ' + c;
+                } else {
+                    output += ' ' + c + ' ' + a;
+                }
+            } else {
+                output = c + ' ' + b + ' ' + a;
             }
-            else {
-                output += ' ' + c + ' ' + a;
+        } else if (c > a) {
+            output = c + ' ' + a + ' ' + b;
+        } else {
+            output = a;
+            if (b > c) {
+                output += ' ' + b + ' ' + c;
+            } else {
+                output += ' ' + c + ' ' + b;
             }
         }
-        else {
-            output = c + ' ' + b + ' ' + a;
-        }
+        return output;
     }
-    else if ((c * 1) > (a * 1)) {
-        output = c + ' ' + a + ' ' + b;
-    }
-    else {
-        output = a;
-        if (b * 1 > c * 1) {
-            output += ' ' + b + ' ' + c;
-        }
-        else {
-            output += ' ' + c + ' ' + b;
-        }
-    }
-    return output;
 }
 
 function solveProblem4() {
@@ -147,18 +160,25 @@ function solveProblem5() {
 // and solves it (prints its real roots).
 
 function solveEquation(a, b, c) {
-    var delta = (b * b) - (4 * a * c);
-    var deltaIsZero = (delta === 0);
-    var deltaIsPositive = (delta > 0);
-    if (deltaIsZero) {
-        return ('x = ' + ((b * -1) / (2 * a)));
-    }
-    else if (deltaIsPositive) {
-        return ('x1 = ' + ((b * -1) + Math.sqrt(delta)) / (2 * a) +
-        ' x2 = ' + (((b * -1) - Math.sqrt(delta)) / (2 * a)));
-    }
-    else {
-        return 'No real roots.';
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        return 'Not a number';
+    } else {
+        a = +a;
+        b = +b;
+        c = +c;
+        var delta = (b * b) - (4 * a * c);
+        var deltaIsZero = (delta === 0);
+        var deltaIsPositive = (delta > 0);
+        if (deltaIsZero) {
+            return ('x = ' + ((b * -1) / (2 * a)));
+        }
+        else if (deltaIsPositive) {
+            return ('x1 = ' + ((b * -1) + Math.sqrt(delta)) / (2 * a) +
+            ' x2 = ' + (((b * -1) - Math.sqrt(delta)) / (2 * a)));
+        }
+        else {
+            return 'No real roots.';
+        }
     }
 }
 
@@ -173,68 +193,59 @@ function solveProblem6() {
 //Use nested if statements.
 
 function getBiggestOf5Numbers(a, b, c, d, e) {
-    var biggestN = a * 1;
-    b *= 1;
-    c *= 1;
-    d *= 1;
-    e *= 1;
-    if (b > biggestN) {
-        if (b > c) {
-            if (b > d) {
-                if (b > e) {
-                    biggestN = b;
-                }
-                else {
+    if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e)) {
+        return 'Not a number';
+    } else {
+        var biggestN = a * 1;
+        b *= 1;
+        c *= 1;
+        d *= 1;
+        e *= 1;
+        if (b > biggestN) {
+            if (b > c) {
+                if (b > d) {
+                    if (b > e) {
+                        biggestN = b;
+                    } else {
+                        biggestN = e;
+                    }
+                } else if (d > e) {
+                    biggestN = d;
+                } else {
                     biggestN = e;
                 }
-            }
-            else if (d > e) {
+            } else if (c > d) {
+                if (c > e) {
+                    biggestN = c;
+                }
+            } else if (d > e) {
                 biggestN = d;
-            }
-            else {
+            } else {
                 biggestN = e;
             }
-        }
-        else if (c > d) {
-            if (c > e) {
-                biggestN = c;
-            }
-        }
-        else if (d > e) {
-            biggestN = d;
-        }
-        else {
-            biggestN = e;
-        }
-    }
-    else if (c > biggestN) {
-        if (c > d) {
-            if (c > e) {
-                biggestN = c;
-            }
-            else {
+        } else if (c > biggestN) {
+            if (c > d) {
+                if (c > e) {
+                    biggestN = c;
+                } else {
+                    biggestN = e;
+                }
+            } else if (d > e) {
+                biggestN = d;
+            } else {
                 biggestN = e;
             }
-        }
-        else if (d > e) {
-            biggestN = d;
-        }
-        else {
+        } else if (d > biggestN) {
+            if (d > e) {
+                biggestN = d;
+            } else {
+                biggestN = e;
+            }
+        } else if (e > biggestN) {
             biggestN = e;
         }
+        return biggestN;
     }
-    else if (d > biggestN) {
-        if (d > e) {
-            biggestN = d;
-        }
-        else {
-            biggestN = e;
-        }
-    }
-    else if (e > biggestN) {
-        biggestN = e;
-    }
-    return biggestN;
 }
 
 function solveProblem7() {
@@ -247,120 +258,121 @@ function solveProblem7() {
 //Write a script that converts a number in the range [0…999] to words, corresponding to its English pronunciation.
 
 function returnNumberAsWord(n) {
-    var output = '';
-    n *= 1;
-    if ((n > 99) || (n < 10)) {
-        output = returnDigitAsWord((n + '')[0]);
+    if (isNaN(n)) {
+        return 'Not a number';
+    } else {
+        var output = '';
+        n = +n;
+        if ((n > 99) || (n < 10)) {
+            output = returnDigitAsWord((n + '')[0]);
+        }
+        if (n > 9) {
+            if (n > 99) {
+                output += ' hundred';
+                if (n % 100) {
+                    output += ' and ';
+                    n = (n + '')[1] + (n + '')[2];
+                }
+            }
+            if (+n < 20 && +n > 9) {
+                switch (+n) {
+                    case 10:
+                        output += 'ten';
+                        break;
+                    case 11:
+                        output += 'eleven';
+                        break;
+                    case 12:
+                        output += 'twelve';
+                        break;
+                    case 13:
+                        output += 'thirteen';
+                        break;
+                    case 14:
+                        output += 'fourteen';
+                        break;
+                    case 15:
+                        output += 'fifteen';
+                        break;
+                    case 16:
+                        output += 'sixteen';
+                        break;
+                    case 17:
+                        output += 'seventeen';
+                        break;
+                    case 18:
+                        output += 'eighteen';
+                        break;
+                    case 19:
+                        output += 'nineteen';
+                        break;
+                }
+            } else if (+n) {
+                switch ((n + '')[0]) {
+                    case '0':
+                        output += '';
+                        break;
+                    case '2':
+                        output += 'twenty';
+                        break;
+                    case '3':
+                        output += 'thirty';
+                        break;
+                    case '4':
+                        output += 'forty';
+                        break;
+                    case '5':
+                        output += 'fifty';
+                        break;
+                    case '6':
+                        output += 'sixty';
+                        break;
+                    case '7':
+                        output += 'seventy';
+                        break;
+                    case '8':
+                        output += 'eighty';
+                        break;
+                    case '9':
+                        output += 'ninety';
+                        break;
+                }
+                switch ((n + '')[1]) {
+                    case '0':
+                        output += '';
+                        break;
+                    case '1':
+                        output += ' one';
+                        break;
+                    case '2':
+                        output += ' two';
+                        break;
+                    case '3':
+                        output += ' three';
+                        break;
+                    case '4':
+                        output += ' four';
+                        break;
+                    case '5':
+                        output += ' five';
+                        break;
+                    case '6':
+                        output += ' six';
+                        break;
+                    case '7':
+                        output += ' seven';
+                        break;
+                    case '8':
+                        output += ' eight';
+                        break;
+                    case '9':
+                        output += ' nine';
+                        break;
+                }
+            }
+        }
+        return output;
     }
-    if (n > 9) {
-        if (n > 99) {
-            output += ' hundred ';
-            if (n % 100 !== 0) {
-                output += 'and ';
-            }
-            n = ((n + '')[1] + (n + '')[2]);
-        }
-        n += '';
-        if (n[0] === '1') {
-            switch (n * 1) {
-                case 10:
-                    output += 'ten';
-                    break;
-                case 11:
-                    output += 'eleven';
-                    break;
-                case 12:
-                    output += 'twelve';
-                    break;
-                case 13:
-                    output += 'thirteen';
-                    break;
-                case 14:
-                    output += 'fourteen';
-                    break;
-                case 15:
-                    output += 'fifteen';
-                    break;
-                case 16:
-                    output += 'sixteen';
-                    break;
-                case 17:
-                    output += 'seventeen';
-                    break;
-                case 18:
-                    output += 'eighteen';
-                    break;
-                case 19:
-                    output += 'nineteen';
-                    break;
-            }
-        }
-        else {
-            switch (n[0] * 1) {
-                case 0:
-                    output += '';
-                    break;
-                case 2:
-                    output += 'twenty';
-                    break;
-                case 3:
-                    output += 'thirty';
-                    break;
-                case 4:
-                    output += 'forty';
-                    break;
-                case 5:
-                    output += 'fifty';
-                    break;
-                case 6:
-                    output += 'sixty';
-                    break;
-                case 7:
-                    output += 'seventy';
-                    break;
-                case 8:
-                    output += 'eighty';
-                    break;
-                case 9:
-                    output += 'ninety';
-                    break;
-            }
-            switch (n[1] * 1) {
-                case 0:
-                    output += '';
-                    break;
-                case 1:
-                    output += ' one';
-                    break;
-                case 2:
-                    output += ' two';
-                    break;
-                case 3:
-                    output += ' three';
-                    break;
-                case 4:
-                    output += ' four';
-                    break;
-                case 5:
-                    output += ' five';
-                    break;
-                case 6:
-                    output += ' six';
-                    break;
-                case 7:
-                    output += ' seven';
-                    break;
-                case 8:
-                    output += ' eight';
-                    break;
-                case 9:
-                    output += ' nine';
-                    break;
-            }
-
-        }
-    }
-    return output;
 }
 
 function solveProblem8() {
