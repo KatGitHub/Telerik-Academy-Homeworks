@@ -198,23 +198,23 @@ FakesAssemblies/
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
 # User-specific stuff:
-*.idea/workspace.xml
-*.idea/tasks.xml
-*.idea/dictionaries
+idea/workspace.xml
+idea/tasks.xml
+idea/dictionaries
 
 # Sensitive or high-churn files:
-*.idea/dataSources.ids
-*.idea/dataSources.xml
-*.idea/sqlDataSources.xml
-*.idea/dynamic.xml
-*.idea/uiDesigner.xml
+idea/dataSources.ids
+idea/dataSources.xml
+idea/sqlDataSources.xml
+idea/dynamic.xml
+idea/uiDesigner.xml
 
 # Gradle:
-*.idea/gradle.xml
-*.idea/libraries
+idea/gradle.xml
+idea/libraries
 
 # Mongo Explorer plugin:
-*.idea/mongoSettings.xml
+idea/mongoSettings.xml
 
 ## File-based project format:
 *.ipr
@@ -226,7 +226,7 @@ FakesAssemblies/
 /out/
 
 # mpeltonen/sbt-idea plugin
-*.idea_modules/
+idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
