@@ -7,19 +7,33 @@ console.log('Problem 1 output:');
 printNumbers(start, end);
 
 function printNumbers(start, end) {
-    for (var i = start; i <= end; i += 1) {
-        console.log(i);
+    if (end < start) {
+        for (var i = start; i >= end; i -= 1) {
+            console.log(i);
+        }
+    } else {
+        for (i = start; i <= end; i += 1) {
+            console.log(i);
+        }
     }
 }
 //Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time
 
 console.log('Problem 2 output:');
-printNumbersNotDivisible(start, end);
+printNumbersNotDivisible(start, end, 3, 7);
 
-function printNumbersNotDivisible(start, end) {
-    for (var i = start; i <= end; i += 1) {
-        if ((i % 3) && (i % 7)) {
-            console.log(i);
+function printNumbersNotDivisible(start, end, divisor1, divisor2) {
+    if (end < start) {
+        for (var i = start; i >= end; i -= 1) {
+            if ((i % divisor1) && (i % divisor2)) {
+                console.log(i);
+            }
+        }
+    } else {
+        for (i = start; i <= end; i += 1) {
+            if ((i % divisor1) && (i % divisor2)) {
+                console.log(i);
+            }
         }
     }
 }
@@ -28,7 +42,7 @@ function printNumbersNotDivisible(start, end) {
 
 var arr = [5, 7, 22, -4, 21, 8];
 console.log('Problem 3 output:');
-returnMaxAndMin(arr);
+console.log(returnMaxAndMin(arr));
 
 function returnMaxAndMin(arr) {
     var maxNumber = arr[0];
@@ -41,13 +55,13 @@ function returnMaxAndMin(arr) {
             minNumber = arr[i];
         }
     }
-    console.log('max number: ' + maxNumber);
-    console.log('min number: ' + minNumber);
+   return 'max number: ' + maxNumber + '; min number: ' + minNumber;
 }
 
 //Write a script that finds the lexicographically smallest and largest property
 // in document, window and navigator objects.
 
+//To see the result open html file and console.
 console.log('Problem 4 output:');
 console.log('document:');
 returnMaxAndMinProperties(document);
