@@ -2,21 +2,16 @@
 // Print the obtained array on the console.
 
 var length = 20;
+var arr = [];
+arr.length = length;
 console.log('Problem 1 output:');
-printArray(initArray(length));
+console.log(initArray(length));
 
 function initArray(length) {
-    var arr = new Array(length);
-
     for (var i = 0; i < length; i += 1) {
         arr[i] = i * 5;
     }
     return arr;
-}
-function printArray(arr) {
-    for (var i = 0; i < arr.length; i += 1) {
-        console.log('element[' + i + '] = ' + arr[i]);
-    }
 }
 
 //Problem 2. Write a script that compares two char arrays lexicographically (letter by letter).
@@ -35,13 +30,13 @@ function compareCharArrays(arr1, arr2) {
 
 //Problem 3. Write a script that finds the maximal sequence of equal elements in an array.
 
-var arr = [2, 1, 1, 2, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1];
+var arr3 = [2, 1, 1, 2, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1];
 console.log('Problem 3 output:');
-console.log('example array: ' + arr);
-console.log(returnMaxSequence(arr));
+console.log('example array: ' + arr3);
+console.log(returnMaxSequence(arr3));
 
 function returnMaxSequence(arr) {
-    for (var i = 0, count = 1, maxCount = 1, end; i < arr.length - 1; i += 1) {
+    for (var i = 0, len = arr.length, count = 1, maxCount = 1, end; i < len - 1; i += 1) {
         if (arr[i] === arr[i + 1]) {
             count++;
             if (count > maxCount) {
@@ -52,11 +47,7 @@ function returnMaxSequence(arr) {
             count = 1;
         }
     }
-    var output = [];
-    for (i = end - maxCount + 1; i <= end; i += 1) {
-        output.push(arr[i]);
-    }
-    return output;
+    return arr.slice(end - maxCount + 1, end + 1);
 }
 
 //Problem 4. Write a script that finds the maximal increasing sequence in an array.
@@ -68,7 +59,7 @@ console.log(returnMaxIncreasingSequence(arr4));
 
 function returnMaxIncreasingSequence(arr) {
     var output = [];
-    for (var i = 0, count = 1, maxCount = 1, index; i < arr.length - 1; i += 1) {
+    for (var i = 0, len = arr.length, count = 1, maxCount = 1, index; i < len - 1; i += 1) {
         if (arr[i] < arr[i + 1]) {
             count += 1;
             if (count > maxCount) {
@@ -79,10 +70,7 @@ function returnMaxIncreasingSequence(arr) {
             count = 1;
         }
     }
-    for (i = index; i > index - maxCount; i -= 1) {
-        output.unshift(arr[i]);
-    }
-    return output.join(', ');
+    return arr.slice(index - maxCount + 1, index + 1);
 }
 
 /* Problem 5. Sorting an array means to arrange its elements in increasing order. Write a script to sort an array.
