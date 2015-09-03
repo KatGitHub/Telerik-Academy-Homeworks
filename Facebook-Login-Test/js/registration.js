@@ -20,7 +20,7 @@ var regButtonFunction = (function () {
         console.log('hodor hodor.. HODOR');
         var result;
         $.ajax({
-            url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
+            url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
             type: "GET",
             success: function (data) {
 
@@ -41,7 +41,7 @@ var regButtonFunction = (function () {
 
                     $.ajax({
                         type: "POST",
-                        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
+                        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
                         contentType: "application/json",
                         data: JSON.stringify(newConfidentialData),
                         success: function (data) {
@@ -54,7 +54,7 @@ var regButtonFunction = (function () {
 
                     $.ajax({
                         type: "POST",
-                        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/SiteManager',
+                        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/SiteManager',
                         contentType: "application/json",
                         data: JSON.stringify(newSiteManager),
                         success: function (data) {
