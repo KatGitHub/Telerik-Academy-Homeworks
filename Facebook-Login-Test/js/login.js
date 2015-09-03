@@ -10,7 +10,7 @@ var logUser = function () {
 
 		var promise = new Promise(function (resolve, reject) {
 			$.ajax({
-				url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
+				url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
 				method: 'GET',
 				success: function (data) {
 					console.log(data.Result);
