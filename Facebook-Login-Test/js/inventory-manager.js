@@ -8,31 +8,30 @@
 
     var currentAdminCount;
     $.ajax({
-        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
+        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
         type: "GET",
         success: function(data){
             currentAdminCount = data.Count;
-            console.log(data.Count);
+//            console.log(data.Count);
 
         },
         error: function(error){
-            alert('GET Fail');
+            //alert('GET Fail');
         }
     })
         .then(function(data) {
-            console.log(currentAdminCount + ' sfsfasf');
 
             if (!currentAdminCount) {
                 $.ajax({
                     type: "POST",
-                    url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
+                    url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
                     contentType: "application/json",
                     data: JSON.stringify(admin),
                     success: function(data) {
-                        alert('Admin added');
+                        //alert('Admin added');
                     },
                     error: function(error) {
-                        alert('Admin existing');
+                        //alert('Admin existing');
                     }
                 });
             }

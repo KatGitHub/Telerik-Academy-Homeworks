@@ -1,3 +1,16 @@
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+FB.init({appId: '309636809206642', status: true, cookie: true,
+xfbml: true});
+};
+(function() {
+var e = document.createElement('script'); e.async = true;
+e.src = document.location.protocol +
+'//connect.facebook.net/en_US/all.js';
+document.getElementById('fb-root').appendChild(e);
+}());
+</script>
 <div id="instruments-admin-page">
 
     <div class="page-header">
@@ -12,23 +25,25 @@
     <button type="button" id="available" class="instruments-filter btn btn-info">Available</button>
     <button type="button" id="unavailable" class="instruments-filter btn btn-info">Not Available</button>
 
+    {{#if admin}}
     <div class="pull-right">
         <a href="#/new-instrument">
             <button type="button" class="btn btn-success "><span class="glyphicon glyphicon-plus"></span>Add Instrument
             </button>
         </a>
     </div>
+    {{/if}}
     <br>
     <br>
 
-    <table class="table table-striped table-bordered">
+    <table class="datatable table table-striped table-bordered">
         <thead>
         <tr>
             <th>Brand</th>
             <th>Model</th>
             <th>Count</th>
             <th>Available Count</th>
-            <th>Actions</th>
+            {{#if admin}}{{else}}<th>Actions</th>{{/if}}
         </tr>
         </thead>
         <tbody>
@@ -38,11 +53,15 @@
             <td>{{Model}}</td>
             <td>{{Count}}</td>
             <td>{{AvailableCount}}</td>
+            {{#if ../admin}}{{else}}
             <td>
+                {{#ifCond AvailableCount '>' 0}}
                 <button type="button" data-id="{{Id}}" data-toggle="modal" data-target="#editInstrumentModal"
-                        class="edit-instrument btn btn-info active">Edit
+                        class="edit-instrument btn btn-info active">Add request
                 </button>
+                {{/ifCond}}
             </td>
+            {{/if}}
         </tr>
         {{~/each}}
         </tbody>

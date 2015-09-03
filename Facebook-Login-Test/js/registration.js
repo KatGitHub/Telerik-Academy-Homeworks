@@ -5,22 +5,26 @@ var regButtonFunction = (function () {
     };
     
     //Register Site Manager
-    function reg() {
+    function reg(cb) {
         var username = $('.username').val();
         var password = $('.password').val();
-
+        console.log(username, password);
         var registrationDataIsValid = validator.isValidUsername(username) && validator.isValidPassword(password);
         
         if(!registrationDataIsValid) {
-            console.log('todor todor.. TODOR');
+            // alert("Unsuccessful Registration! Please Try again");
             return;
+        }
+        
+        if(typeof cb === 'function') {
+            cb();
         }
         
         var constructionSite = $('.construction-site').val();
         console.log('hodor hodor.. HODOR');
         var result;
         $.ajax({
-            url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
+            url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
             type: "GET",
             success: function (data) {
 
@@ -41,7 +45,7 @@ var regButtonFunction = (function () {
 
                     $.ajax({
                         type: "POST",
-                        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
+                        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/ConfidentialData',
                         contentType: "application/json",
                         data: JSON.stringify(newConfidentialData),
                         success: function (data) {
@@ -54,11 +58,12 @@ var regButtonFunction = (function () {
 
                     $.ajax({
                         type: "POST",
-                        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/SiteManager',
+                        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/SiteManager',
                         contentType: "application/json",
                         data: JSON.stringify(newSiteManager),
                         success: function (data) {
-                            console.log('New Site Manager Added')
+                            console.log('New Site Manager Added');
+                            window.location.hash = '#/login';
                         },
                         error: function (error) {
                             alert('Post Site Manager Fail');

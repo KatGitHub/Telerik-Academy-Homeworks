@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="plugins/bootstrap-theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="plugins/datatables/jquery.dataTables.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="plugins/bootstrap-theme/css/freelancer.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -21,12 +22,11 @@
     <!-- jQuery -->
     <script src="plugins/bootstrap-theme/js/jquery.js"></script>
     <!--Sammy JS-->
-    <script src="plugins/sammy-js/lib/sammy.js" type="text/javascript" charset="utf-8"></script>    
-    <script src="js/facebook-login.js"></script>
+    <script src="plugins/sammy-js/lib/sammy.js" type="text/javascript" charset="utf-8"></script>
     <!-- Custom Fonts -->
     <link href="plugins/bootstrap-theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,6 +38,7 @@
 </head>
 
 <body id="page-top" class="index">
+
     <div id="main" class="container-fluid">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
@@ -61,10 +62,6 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="nav-btn page-scroll">
-                        <a><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link="true" data-size="large">
-                        </fb:login-button></a>
-                    </li>
                     <li id="login-nav-btn" class="nav-btn page-scroll">
                         <a href="#/login" id="sign-in-anchor">Sign In</a>
                     </li>
@@ -80,7 +77,6 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <div id="side-navigation-container">
 </div>
-
     <div id="container">
         <!-- Header -->
         <header>
@@ -134,7 +130,7 @@
     <script src="plugins/tbs/everlive.all.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="plugins/bootstrap-theme/js/classie.js"></script>
     <script src="plugins/bootstrap-theme/js/cbpAnimatedHeader.js"></script>
 
@@ -144,6 +140,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="plugins/bootstrap-theme/js/freelancer.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.js"></script>
 
     <!-- Application Logic -->
     
@@ -154,7 +151,7 @@
     <script src="js/templates.js"></script>
     <script src="js/general-module.js"></script>
     <script src="js/instruments-module.js"></script>
-    <script src="js/login.js"></script>    
+    <script src="js/login.js"></script>
     <script src="js/app.js"></script>
 </body>
 
