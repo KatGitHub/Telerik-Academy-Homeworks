@@ -38,9 +38,6 @@
 </head>
 
 <body id="page-top" class="index">
-
-<div id="status">
-</div>
     <div id="main" class="container-fluid">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
@@ -65,8 +62,8 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="nav-btn page-scroll">
-                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                        </fb:login-button>
+                        <a><fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link="true" data-size="large">
+                        </fb:login-button></a>
                     </li>
                     <li id="login-nav-btn" class="nav-btn page-scroll">
                         <a href="#/login" id="sign-in-anchor">Sign In</a>
