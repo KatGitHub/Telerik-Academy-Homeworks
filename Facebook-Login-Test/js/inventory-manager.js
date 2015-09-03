@@ -8,7 +8,7 @@
 
     var currentAdminCount;
     $.ajax({
-        url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
+        url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
         type: "GET",
         success: function(data){
             currentAdminCount = data.Count;
@@ -25,7 +25,7 @@
             if (!currentAdminCount) {
                 $.ajax({
                     type: "POST",
-                    url: 'http://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
+                    url: 'https://api.everlive.com/v1/' + CONSTANTS.API_KEY + '/Administrator',
                     contentType: "application/json",
                     data: JSON.stringify(admin),
                     success: function(data) {
