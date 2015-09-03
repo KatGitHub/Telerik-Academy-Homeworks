@@ -78,16 +78,5 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-
-  FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-      console.log('getLogin status');
-      console.log(response.authResponse.accessToken);
-    }
-  });
-
-  FB.api('/me', function(response) {
-    console.log('response');
-    console.log(JSON.stringify(response));
-  });
+  
 }());
